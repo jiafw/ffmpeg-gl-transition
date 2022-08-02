@@ -21,7 +21,8 @@ RUN apt-get -y update -y && apt-get -y upgrade
 RUN apt-get -y install git
 
 # get ffmpeg sources
-RUN git clone http://source.ffmpeg.org/git/ffmpeg.git ffmpeg
+RUN wget http://www.ffmpeg.org/releases/ffmpeg-4.2.2.tar.gz
+RUN tar -zxvf ffmpeg-4.2.2.tar.gz && mv ffmpeg-4.2.2 ffmpeg
 
 # get ffmpeg-gl-transition modifications
 # this pulls from the original master for standalone use
